@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Quizzy </title>
+
+  <!-- ================================================ CSS ================================================ -->
+    <link rel="stylesheet" href="style.css"/>
+
+  <!-- ================================================ FAVICON ================================================ -->   
+    <link rel="shortcut icon" href="quiz.png" type="image/x-icon">
+
+  <!-- ================================================ ICONS ================================================ -->   
+    <script src="https://kit.fontawesome.com/09df2a2e93.js" crossorigin="anonymous"></script>
+  
+
+</head>
+
+<body>
+
+  <div class="container">
+    
+    <!-- ================ Start Screen ================ -->
+    <div class="start-screen">
+      <h1 class="heading"> Quizzy </h1>
+      <div class="settings">
+
+        <label for="total-questions"> Number of Questions </label>
+        <div class="select-box-container">
+          <select name="" id="total-questions">
+            <option value="5"> 5 </option>
+            <option value="10"> 10 </option>
+            <option value="15"> 15 </option>
+            <option value="20"> 20 </option>
+            <option value="25"> 25 </option>
+            <option value="30"> 30 </option>
+          </select>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+
+        <label for="question-category"> Select Category </label>
+        <div class="select-box-container">
+          <select name="" id="question-category">
+            <option value=""> Any Category </option>
+            <option value="9"> General Knowledge </option>
+            <option value="10"> Books </option>
+            <option value="11"> Films </option>
+            <option value="12"> Music </option>
+            <option value="13"> Musicals & Theatres </option>
+            <option value="14"> Television </option>
+            <option value="15"> Video Games </option>
+            <option value="16"> Board Games </option>
+            <option value="17"> Science & Nature </option>
+            <option value="18"> Computers </option>
+            <option value="19"> Mathematics </option>
+            <option value="20"> Mythology </option>
+            <option value="21"> Sports </option>
+            <option value="22"> Geography </option>
+            <option value="23"> History </option>
+            <option value="24"> Politics </option>
+            <option value="25"> Art </option>
+            <option value="26"> Celebrities </option>
+            <option value="27"> Animals </option>
+            <option value="28"> Vehicles </option>
+            <option value="29"> Comics </option>
+            <option value="30"> Gadgets </option>
+            <option value="31"> Japanese Anime & Manga </option>
+            <option value="32"> Cartoon & Animations </option>
+          </select>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+
+        <label for="difficulty-level"> Choose Difficulty </label>
+        <div class="select-box-container">
+          <select name="" id="difficulty-level">
+            <option value=""> Any difficulty </option>
+            <option value="easy"> Easy </option>
+            <option value="medium"> Medium </option>
+            <option value="hard"> Hard </option>
+          </select>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+
+        <label for="time"> Select time per question </label>
+        <div class="select-box-container">
+          <select name="" id="time">
+            <option value="10"> 10 seconds </option>
+            <option value="15"> 15 seconds </option>
+            <option value="20"> 20 seconds </option>
+            <option value="25"> 25 seconds </option>
+            <option value="30"> 30 seconds </option>
+            <option value="60"> 60 seconds </option>
+          </select>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+
+      </div>
+      <button class="btn start"> Start Quiz </button>
+    </div>
+
+    <!-- ================ Quiz Screen ================ -->
+    <div class="quiz-screen hide">
+
+      <div class="timer">
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+          <span class="timer-text"></span>
+        </div>
+      </div>
+
+      <div class="question-wrapper">
+        <div class="number">
+          Question <span class="current-question"> 1 </span>
+          <span class="total-questions"> of 10 </span>
+        </div>
+        <div class="question"> This is a question </div>
+      </div>
+
+      <div class="options-wrapper">
+        <div class="option">
+          <span class="option-text"> Option 1 </span>
+          <span class="checkbox"></span>
+        </div>
+        <div class="option">
+          <span class="option-text"> Option 2 </span>
+          <span class="checkbox"></span>
+        </div>
+        <div class="option">
+          <span class="option-text"> Option 3 </span>
+          <span class="checkbox"></span>
+        </div>
+        <div class="option">
+          <span class="option-text"> Option 4 </span>
+          <span class="checkbox"></span>
+        </div>
+      </div>
+
+      <button class="btn submit" disabled> Submit </button>
+      <button class="btn next"> Next </button>
+
+    </div>
+
+    <!-- ================ Score Screen ================ -->
+    <div class="score-screen hide">
+
+      <div class="game-over-icon-container">
+        <i class="fa-solid fa-skull" style="color: #0c80ef;"></i>
+        <h1 class="heading"> Game over! </h1>
+      </div>
+      <div class="score">
+        <span class="score-text"> You have completed the quiz! </span><br />
+        <span class="score-text"> Your Score : </span>
+        <div class="final-score">
+          <span class="total-score"> 3 </span>
+          <span class="out-of"> / 20 </span>
+        </div>
+        <button class="btn restart"> Restart Quiz </button>
+      </div>
+
+    </div>
+
+    <!-- ================ Error Screen ================ -->
+    <div class="error-screen hide">
+      <div class="error-icon-container">
+        <i class="fa-solid fa-bug" style="color: #0c80ef;"></i>
+        <h1 class="heading"> Error 404! </h1>
+      </div>
+      <div class="error-msg-container">
+        <span> Oops! something went wrong! </p>
+        <span> Please check your internet connection or try again after some time.</p>
+      </div>
+      <button class="btn reset restart"> Retry </button>
+    </div>
+
+  </div>
+
+<!-- ================================================ JavaScript ================================================ -->
+<script src="script.js"> </script>
+
+</body>
+
+</html>
