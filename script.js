@@ -65,12 +65,20 @@ function startTimer(totalTime){
 
     const progressBar = document.querySelector('.progress-bar');
     const timerText = document.querySelector('.timer-text');
+    
+    let audioPlayed = false;
     let currentTime = totalTime * 1000;
 
     intervalID = setInterval(() => {
+
         const remainingTime = Math.ceil(currentTime / 1000);
         timerText.textContent = remainingTime;
         progressBar.style.width = `${(currentTime / (totalTime * 1000)) * 100}%`;
+
+        if (remainingTime === 4 && !audioPlayed) {
+            playAudio();
+            audioPlayed = true;
+        }
         
         if (currentTime <= 0) {
             clearInterval(intervalID);
@@ -78,7 +86,7 @@ function startTimer(totalTime){
             handleTimeout();
         }
         currentTime -= 10;
-
+        
     }, 10); 
 }
 
@@ -195,6 +203,12 @@ function showScore() {
     scoreScreen.classList.remove('hide')
     totalScore.innerText = score;
     outOf.innerText = ` / ${totalQuestion.value}`
+}
+
+function playAudio() {
+    
+    const audio = new Audio('countdown.mp3')
+    audio.play();
 }
 
 restartBtn.forEach((restart) => {
