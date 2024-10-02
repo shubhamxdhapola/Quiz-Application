@@ -17,7 +17,6 @@ const submitButton = document.querySelector('.submit');
 const nextBtn = document.querySelector('.next');
 const restartBtn = document.querySelectorAll('.restart')
 
-
 let questionsList = [];
 let currentQuizItem = 0;
 let intervalID;
