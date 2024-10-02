@@ -61,7 +61,7 @@ async function startQuiz() {
 
 startBtn.addEventListener('click', startQuiz)
 
-function startTimer(totalTime){
+function startTimer(totalTime) {
 
     const progressBar = document.querySelector('.progress-bar');
     const timerText = document.querySelector('.timer-text');
@@ -160,7 +160,7 @@ function checkAnswer() {
 
 submitButton.addEventListener('click', checkAnswer)
 
-function showCorrectAnswer(){
+function showCorrectAnswer() {
 
     const correctAnswer = decodeHtmlEntities(questionsList[currentQuizItem].correct_answer);
     optionsText.forEach((optionText) => {
