@@ -75,7 +75,7 @@ function startTimer(totalTime) {
         timerText.textContent = remainingTime;
         progressBar.style.width = `${(currentTime / (totalTime * 1000)) * 100}%`;
 
-        if (remainingTime === 4 && !audioPlayed) {
+        if (remainingTime === 3 && !audioPlayed) {
             playAudio();
             audioPlayed = true;
         }
@@ -141,6 +141,7 @@ optionsContainer.addEventListener('click', (e) => {
 
 function checkAnswer() {
     
+    pauseAudio()
     clearInterval(intervalID)
     const selectedOption = document.querySelector('.selected').firstElementChild;
     const correctAnswer = decodeHtmlEntities(questionsList[currentQuizItem].correct_answer);
@@ -205,11 +206,9 @@ function showScore() {
     outOf.innerText = ` / ${totalQuestion.value}`
 }
 
-function playAudio() {
-    
-    const audio = new Audio('countdown.mp3')
-    audio.play();
-}
+const audio = new Audio('countdown.mp3');
+const playAudio = () => audio.play();
+const pauseAudio = () => audio.pause; audio.currentTime = 0;
 
 restartBtn.forEach((restart) => {
     restart.addEventListener('click', () => {
