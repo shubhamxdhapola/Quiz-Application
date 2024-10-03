@@ -208,7 +208,10 @@ function showScore() {
 
 const audio = new Audio('countdown.mp3');
 const playAudio = () => audio.play();
-const pauseAudio = () => audio.pause; audio.currentTime = 0;
+const pauseAudio = () => { 
+    audio.pause(); 
+    audio.currentTime = 0 
+};
 
 restartBtn.forEach((restart) => {
     restart.addEventListener('click', () => {
