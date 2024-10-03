@@ -1,6 +1,6 @@
-# Quiz Application
+## Quizzy
 
-This **Quiz Application** is a dynamic web-based platform designed to test users’ knowledge through a series of interactive questions. Built using HTML, CSS, and JavaScript, it provides a smooth user experience with multiple features like animations, timers, and a scoring system. The application fetches questions from the Open Trivia Database API, ensuring a diverse set of topics and difficulty levels.
+**Quizzy** is a quiz application which is a dynamic web-based platform designed to test users’ knowledge through a series of interactive questions. Built using HTML, CSS, and JavaScript, it provides a smooth user experience with multiple features like animations, timers, and a scoring system. The application fetches questions from the Open Trivia Database API, ensuring a diverse set of topics and difficulty levels.
 
 ## Features
 
